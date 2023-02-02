@@ -10,7 +10,7 @@ const links = [
     { href: "#", label: "Contact" },
 ];
 
-const Navbar = () => {
+const NavBar = () => {
     const [showDropDown, setShowDropDown] = useState(false);
 
     function NavDropDown() {
@@ -72,4 +72,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavBar;
