@@ -23,11 +23,11 @@ const ContactHeader = () => {
 
     return (
         <>
-            <div className="flex justify-around p-8 bg-blue-200 ">
+            <div className="flex justify-around p-8 bg-grey-400 ">
                 <div className="">
-                    <div className="p-3 bg-white rounded-lg shadow-2xl">
-                        <div className="text-center">
-                            <span className="text-5xl">
+                    <div className="p-3 mb-4 bg-white rounded-lg shadow-2xl">
+                        <div className="text-center flex-col">
+                            <span className="text-5xl w-full flex justify-center">
                                 <MdLocationOn />
                             </span>
                             <span>
@@ -38,20 +38,20 @@ const ContactHeader = () => {
                             </span>
                         </div>
                     </div>
-                    <div  className="flex justify-evenly p-3">
+                    <div  className="flex justify-evenly p-3 ">
                         <div className=" w-6/12 mr-2 bg-white rounded-lg shadow-2xl">
                             <div className="text-center">
-                                <span className="text-5xl">
+                                <span className="text-5xl  w-full flex justify-center">
                                     <MdEmail />
                                 </span>
-                                <span>
+                                <span >
                                     <p>Laxnar@gmail.com</p>
                                 </span>
                             </div>
                         </div>
                         <div className="w-6/12 ml-2 bg-white rounded-lg shadow-2xl">
                             <div className="text-center">
-                                <span className="text-5xl">
+                                <span className="text-5xl w-full flex justify-center">
                                     <MdPhone />
                                 </span>
                                 <span>
@@ -62,7 +62,7 @@ const ContactHeader = () => {
                     </div>
                 </div>
                 <div>
-                    <div>
+                    <div className="p-3 bg-white rounded-lg shadow-2xl">
                         <form onSubmit={handleSubmit} className="text-center ">
                             <label>Contact Us</label>
                             <input
@@ -88,7 +88,7 @@ const ContactHeader = () => {
                                 onChange={(e) => setText(e.target.value)}
                             />
 
-                            <button className="rounded-md px-3 py-2 bg-blue-500">Send Message</button>
+                            <button className="rounded-md px-3 py-2 bg-orange-400">Send Message</button>
                         </form>
                     </div>
                 </div>
