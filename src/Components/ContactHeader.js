@@ -18,14 +18,14 @@ const ContactHeader = () => {
     //   }).then(() => {
     //     // history.go(-1);
     //     history.push('/');
-    //   })
+    //   }) 
     }
 
     return (
         <>
-            <div className="bg-blue-200">
-                <div>
-                    <div>
+            <div className="flex justify-around p-8 bg-blue-200 ">
+                <div className="">
+                    <div className="p-3 bg-white rounded-lg shadow-2xl">
                         <div className="text-center">
                             <span className="text-5xl">
                                 <MdLocationOn />
@@ -38,8 +38,8 @@ const ContactHeader = () => {
                             </span>
                         </div>
                     </div>
-                    <div>
-                        <div>
+                    <div  className="flex justify-evenly p-3">
+                        <div className=" w-6/12 mr-2 bg-white rounded-lg shadow-2xl">
                             <div className="text-center">
                                 <span className="text-5xl">
                                     <MdEmail />
@@ -49,7 +49,7 @@ const ContactHeader = () => {
                                 </span>
                             </div>
                         </div>
-                        <div>
+                        <div className="w-6/12 ml-2 bg-white rounded-lg shadow-2xl">
                             <div className="text-center">
                                 <span className="text-5xl">
                                     <MdPhone />
@@ -63,32 +63,32 @@ const ContactHeader = () => {
                 </div>
                 <div>
                     <div>
-                        <form onSubmit={handleSubmit} className="">
+                        <form onSubmit={handleSubmit} className="text-center ">
                             <label>Contact Us</label>
                             <input
                                 type="text"
-                                className="w-full rounded-sm shadow-sm inline-block shadow-black"
-                                placeholder="Your Name"
+                                className="w-full rounded-lg py-2 my-2 shadow-sm bg-white inline-block shadow-black"
+                                placeholder="  Your Name"
                                 required
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
                             <input
                                 required
-                                className="w-full rounded-sm shadow-sm inline-block shadow-black"
-                                placeholder="Your Email"
+                                className="w-full rounded-lg py-2 my-2 shadow-sm bg-white inline-block shadow-black"
+                                placeholder="  Your Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <textarea
                                 required
-                                className="w-full h-24 rounded-sm shadow-sm inline-block shadow-black"
+                                className="w-full h-16 py-2 my-2 rounded-lg shadow-sm inline-block shadow-black"
                                 value={text_msg}
-                                placeholder="Message"
+                                placeholder="  Message"
                                 onChange={(e) => setText(e.target.value)}
                             />
 
-                            <button className="rounded-md px-3 py-2 bg-blue-500">Submit</button>
+                            <button className="rounded-md px-3 py-2 bg-blue-500">Send Message</button>
                         </form>
                     </div>
                 </div>
