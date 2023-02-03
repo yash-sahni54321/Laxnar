@@ -63,11 +63,12 @@ const ContactHeader = () => {
                 </div>
                 <div>
                     <div className="p-3 bg-white rounded-lg shadow-2xl">
-                        <form onSubmit={handleSubmit} className="text-center ">
-                            <label>Contact Us</label>
+                        <form onSubmit={handleSubmit} className="text-center">
+                            <label className="">Contact Us</label>
+                            <div className="flex justify-evenly">
                             <input
                                 type="text"
-                                className="w-full rounded-lg py-2 my-2 shadow-sm bg-white inline-block shadow-black"
+                                className="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="  Your Name"
                                 required
                                 value={name}
@@ -75,20 +76,21 @@ const ContactHeader = () => {
                             />
                             <input
                                 required
-                                className="w-full rounded-lg py-2 my-2 shadow-sm bg-white inline-block shadow-black"
-                                placeholder="  Your Email"
+                                className="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder=" Your Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
+                            </div>
                             <textarea
                                 required
-                                className="w-full h-16 py-2 my-2 rounded-lg shadow-sm inline-block shadow-black"
+                                className="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 value={text_msg}
                                 placeholder="  Message"
                                 onChange={(e) => setText(e.target.value)}
                             />
 
-                            <button className="rounded-md px-3 py-2 bg-orange-400">Send Message</button>
+                            <button className="rounded-md  px-3 py-2 bg-orange-400">Send Message</button>
                         </form>
                     </div>
                 </div>
