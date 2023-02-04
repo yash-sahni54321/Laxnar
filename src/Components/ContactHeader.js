@@ -22,80 +22,73 @@ const ContactHeader = () => {
     }
 
     return (
-        <>
-            <div className="flex justify-around p-8 h-96 bg-grey-400 ">
-                <div className="">
-                    <div className="p-3 mb-4 bg-white rounded-lg shadow-2xl">
-                        <div className="text-center flex-col">
-                            <span className="text-5xl w-full flex justify-center">
-                                <MdLocationOn />
-                            </span>
-                            <span>
-                                <p>Our Address</p>
-                            </span>
-                            <span>
-                                <p>C-62, Sector M, Aliganj, Lucknow, Uttar Pradesh - 226024</p>
-                            </span>
-                        </div>
-                    </div>
-                    <div  className="flex justify-evenly p-3 ">
-                        <div className=" w-6/12 mr-2 bg-white rounded-lg shadow-2xl">
-                            <div className="text-center">
-                                <span className="text-5xl  w-full flex justify-center">
-                                    <MdEmail />
-                                </span>
-                                <span >
-                                    <p>Laxnar@gmail.com</p>
-                                </span>
-                            </div>
-                        </div>
-                        <div className="w-6/12 ml-2 bg-white rounded-lg shadow-2xl">
-                            <div className="text-center">
-                                <span className="text-5xl w-full flex justify-center">
-                                    <MdPhone />
-                                </span>
-                                <span>
-                                    <p>+91 888888888</p>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div className="p-3 bg-white rounded-lg shadow-2xl">
-                        <form onSubmit={handleSubmit} className="text-center">
-                            <label className="">Contact Us</label>
-                            <div className="flex justify-evenly">
-                            <input
-                                type="text"
-                                className="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="  Your Name"
-                                required
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                            <input
-                                required
-                                className="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder=" Your Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            </div>
-                            <textarea
-                                required
-                                className="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                value={text_msg}
-                                placeholder="  Message"
-                                onChange={(e) => setText(e.target.value)}
-                            />
-
-                            <button className="rounded-md  px-3 py-2 bg-orange-400">Send Message</button>
-                        </form>
-                    </div>
-                </div>
+        <div>
+        <form onClick={handleSubmit} className="text-gray-700 body-font relative">
+          <div className="container px-5 py-24 mx-auto">
+            <div className="flex flex-col text-center w-full mb-12">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+                Contact Us
+              </h1>
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+                Feel free to dropdown your message, we are always here to help you out.
+              </p>
             </div>
-        </>
+            <div className="lg:w-1/2 md:w-2/3 mx-auto">
+              <div className="flex flex-wrap -m-2">
+                <div className="p-2 w-1/2">
+                  <div className="relative">
+                    <label for="name" className="leading-7 text-sm text-gray-600">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    />
+                  </div>
+                </div>
+                <div className="p-2 w-1/2">
+                  <div className="relative">
+                    <label
+                      for="email"
+                      className="leading-7 text-sm text-gray-600"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    />
+                  </div>
+                </div>
+                <div className="p-2 w-full">
+                  <div className="relative">
+                    <label
+                      for="message"
+                      className="leading-7 text-sm text-gray-600"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    ></textarea>
+                  </div>
+                </div>
+                <div className="p-2 w-full">
+                  <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                    Button
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     );
 };
 
