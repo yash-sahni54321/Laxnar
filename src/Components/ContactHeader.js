@@ -18,16 +18,16 @@ const ContactHeader = () => {
     //   }).then(() => {
     //     // history.go(-1);
     //     history.push('/');
-    //   })
+    //   }) 
     }
 
     return (
         <>
-            <div className="bg-blue-200">
-                <div>
-                    <div>
-                        <div className="text-center">
-                            <span className="text-5xl">
+            <div className="flex justify-around p-8 h-96 bg-grey-400 ">
+                <div className="">
+                    <div className="p-3 mb-4 bg-white rounded-lg shadow-2xl">
+                        <div className="text-center flex-col">
+                            <span className="text-5xl w-full flex justify-center">
                                 <MdLocationOn />
                             </span>
                             <span>
@@ -38,20 +38,20 @@ const ContactHeader = () => {
                             </span>
                         </div>
                     </div>
-                    <div>
-                        <div>
+                    <div  className="flex justify-evenly p-3 ">
+                        <div className=" w-6/12 mr-2 bg-white rounded-lg shadow-2xl">
                             <div className="text-center">
-                                <span className="text-5xl">
+                                <span className="text-5xl  w-full flex justify-center">
                                     <MdEmail />
                                 </span>
-                                <span>
+                                <span >
                                     <p>Laxnar@gmail.com</p>
                                 </span>
                             </div>
                         </div>
-                        <div>
+                        <div className="w-6/12 ml-2 bg-white rounded-lg shadow-2xl">
                             <div className="text-center">
-                                <span className="text-5xl">
+                                <span className="text-5xl w-full flex justify-center">
                                     <MdPhone />
                                 </span>
                                 <span>
@@ -62,33 +62,35 @@ const ContactHeader = () => {
                     </div>
                 </div>
                 <div>
-                    <div>
-                        <form onSubmit={handleSubmit} className="">
-                            <label>Contact Us</label>
+                    <div className="p-3 bg-white rounded-lg shadow-2xl">
+                        <form onSubmit={handleSubmit} className="text-center">
+                            <label className="">Contact Us</label>
+                            <div className="flex justify-evenly">
                             <input
                                 type="text"
-                                className="w-full rounded-sm shadow-sm inline-block shadow-black"
-                                placeholder="Your Name"
+                                className="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="  Your Name"
                                 required
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
                             <input
                                 required
-                                className="w-full rounded-sm shadow-sm inline-block shadow-black"
-                                placeholder="Your Email"
+                                className="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder=" Your Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
+                            </div>
                             <textarea
                                 required
-                                className="w-full h-24 rounded-sm shadow-sm inline-block shadow-black"
+                                className="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 value={text_msg}
-                                placeholder="Message"
+                                placeholder="  Message"
                                 onChange={(e) => setText(e.target.value)}
                             />
 
-                            <button className="rounded-md px-3 py-2 bg-blue-500">Submit</button>
+                            <button className="rounded-md  px-3 py-2 bg-orange-400">Send Message</button>
                         </form>
                     </div>
                 </div>

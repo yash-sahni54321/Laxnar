@@ -1,10 +1,10 @@
-import Navbar from "../Components/NavBar";
+
 const HomePage = () => {
-    return 
-    <>
-        <Navbar/>
-    </>
-    ;
-}
- 
+    return (
+        <>
+
+        </>
+    );
+};
+
 export default HomePage;

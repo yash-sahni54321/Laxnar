@@ -1,5 +1,13 @@
+import ContactHeader from "../Components/ContactHeader"
+import Map from "../Components/Map";
+
 const ContactUsPage = () => {
-    return ( <></> );
+    return ( <>
+
+        <ContactHeader/>
+        <Map/>
+ 
+    </> );
 }
  
 export default ContactUsPage;
