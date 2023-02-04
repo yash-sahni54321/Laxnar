@@ -23,7 +23,7 @@ const ContactHeader = () => {
 
     return (
         <>
-            <div className="flex justify-around p-8 bg-grey-400 ">
+            <div className="flex justify-around p-8 h-96 bg-grey-400 ">
                 <div className="">
                     <div className="p-3 mb-4 bg-white rounded-lg shadow-2xl">
                         <div className="text-center flex-col">
