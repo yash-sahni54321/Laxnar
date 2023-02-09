@@ -1,10 +1,10 @@
-import ContactHeader from "../Components/ContactHeader"
 import Map from "../Components/Map";
+import PageIntroHeader from "../Components/PageIntroHeader";
 
 const ContactUsPage = () => {
     return ( <>
 
-        <ContactHeader/>
+        <PageIntroHeader PageName={"Contact"} />
         <Map/>
  
     </> );

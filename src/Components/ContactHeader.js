@@ -1,6 +1,7 @@
 
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { useState } from "react";
+import PageIntroHeader from "./PageIntroHeader";
 const ContactHeader = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -23,6 +24,7 @@ const ContactHeader = () => {
 
     return (
         <div>
+        <PageIntroHeader/>
         <form onClick={handleSubmit} className="text-gray-700 body-font relative">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-col text-center w-full mb-12">
