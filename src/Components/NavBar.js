@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
+import {NavLink} from 'react-router-dom'
 import HamBurger from "../Icons/HamBurger";
 import { BsSearch } from 'react-icons/bs';
 
 const links = [
-    { href: "#", label: "Corporate" },
-    { href: "#", label: "Products" },
-    { href: "#", label: "Technical Support" },
-    { href: "#", label: "News" },
-    { href: "#", label: "Contact" },
+    { to: '/', label: "Home" },
+    { to: '/product', label: "Products" },
+    { to: "/service", label: "Service" },
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Contact" },
 ];
 
 const NavBar = () => {
@@ -18,8 +19,10 @@ const NavBar = () => {
             <div>
                 <ol class='absolute w-full bg-gray-50 p-5 shadow-lg rounded-b-2xl'>
                     {links.map((link) => (
-                        <li class='left-0 font-medium mt-1 px-2 py-1 flex justify-between p-4 border-b-2 border-gray-300' href={link.href}>
+                        <li>
+                        <NavLink class='left-0 font-medium mt-1 px-2 py-1 flex justify-between p-4 border-b-2 border-gray-300' to={link.to}>
                             {link.label}
+                        </NavLink>
                         </li>
                     ))}
                 </ol>
@@ -73,7 +76,9 @@ const NavBar = () => {
                     <div class='items-center justify-between hidden w-full md:flex md:w-auto md:order-1' id='navbar-sticky'>
                         <ol class='h-full flex p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0'>
                             {links.map((link) => (
-                                <li href={link.href}>{link.label}</li>
+                                <li>
+                                <NavLink to={link.to}>{link.label}</NavLink>
+                                </li>
                             ))}
                         </ol>
                     </div>

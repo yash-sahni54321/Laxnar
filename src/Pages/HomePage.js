@@ -1,10 +1,17 @@
-import Navbar from "../Components/NavBar";
+import HomeCarousal from "../Components/HomeCarousal";
+import HomeCarousalbt from "../Components/HomeCarousalbt";
+import { HomeImage } from "../Components/HomeImage";
+import HomeResearch from "../Components/HomeResearch";
+
 const HomePage = () => {
-    return 
-    <>
-        <Navbar/>
-    </>
-    ;
-}
- 
+    return (
+        <>
+        <HomeCarousal/>
+        <HomeImage/>
+        <HomeCarousalbt/>
+        <HomeResearch/>
+        </>
+    );
+};
+
 export default HomePage;
