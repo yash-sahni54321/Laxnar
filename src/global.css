@@ -5,3 +5,20 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+.custom-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: rgba(229, 231, 235, var(--bg-opacity));
+    cursor: pointer;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: #a0aec0;
+    visibility: hidden;
+}
