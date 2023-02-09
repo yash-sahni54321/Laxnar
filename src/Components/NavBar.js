@@ -1,6 +1,6 @@
-import { Fragment, useState } from "react";
-import { Menu } from "@headlessui/react";
+import { useState } from "react";
 import HamBurger from "../Icons/HamBurger";
+import { BsSearch } from 'react-icons/bs';
 
 const links = [
     { href: "#", label: "Corporate" },
@@ -47,7 +47,21 @@ const NavBar = () => {
 
                     <a class='ml-2.5 font-semibold text-2xl text-gray-600 body-font font-poppins flex items-center'>LAXNAR</a>
 
-                    <div class='flex md:order-2 left-0'>
+
+                    <div>
+                        <button
+                            onClick={() => setShowDropDown(!showDropDown)}
+                            type='button'
+                            class='inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+                            aria-controls='navbar-sticky'
+                            aria-expanded='false'
+                        >
+                            <span class='sr-only'>Open main menu</span>
+                            <BsSearch />
+                        </button>
+                    </div>
+
+                    <div class='flex md:order-2 left-0 hidden md:block'>
                         <button
                             type='button'
                             class='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'

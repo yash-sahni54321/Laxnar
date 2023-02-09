@@ -10,7 +10,7 @@ const Footer = () => {
             Do you have any question about our product and services?
           </p>
           <p>
-            Call us on {number} or email {email}
+            Call us on this {number} or email {email}
           </p>
         </div>
 
