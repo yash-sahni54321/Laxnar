@@ -1,13 +1,15 @@
+import ContactHeader from "../Components/ContactHeader";
 import Map from "../Components/Map";
 import PageIntroHeader from "../Components/PageIntroHeader";
 
 const ContactUsPage = () => {
-    return ( <>
+    return (
+        <>
+            <PageIntroHeader PageName={"Contact"} />
+            <ContactHeader />
+            <Map />
+        </>
+    );
+};
 
-        <PageIntroHeader PageName={"Contact"} />
-        <Map/>
- 
-    </> );
-}
- 
 export default ContactUsPage;
