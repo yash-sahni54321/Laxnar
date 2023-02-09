@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import HomeCard from './HomeCards'
 
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 export const HomeCarousalbt = () => {
 
+  const myRef = useRef(null);
   const HomeCImages = [
     {
       title: 'MT71 (CLOSE LOOP / GEARLESS) INTEGRATED PANEL',
@@ -36,10 +37,16 @@ export const HomeCarousalbt = () => {
   ];
 
   const scrollLeft = () => {
-    document.getElementById("content").scrollLeft -= 800;
+    if(myRef.current != null){
+      myRef.current.scrollLeft -= 800;
+    }
+    // document.getElementById("content").scrollLeft -= 800;
   }
   const scrollRight = () => {
-    document.getElementById("content").scrollLeft += 800;
+    if(myRef.current != null){
+      myRef.current.scrollLeft += 800;
+    }
+    // document.getElementById("content").scrollLeft += 800;
   }
 
 
@@ -54,7 +61,7 @@ export const HomeCarousalbt = () => {
           <FiChevronRight />
         </button>
       </div>
-      <div id="content" className=" bg-blue-50 carousel p-4 flex items-center justify-start overflow-x-auto scroll-smooth  scrollbar-hide">
+      <div id="content" ref={myRef} className=" bg-blue-50 carousel p-4 flex items-center justify-start overflow-x-auto scroll-smooth  scrollbar-hide">
         <div >
           <div className='flex-row inline-flex'>
             {HomeCImages.map((CardData) => (

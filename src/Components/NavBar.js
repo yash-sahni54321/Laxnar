@@ -17,7 +17,7 @@ const NavBar = () => {
     function NavDropDown() {
         return (
             <div>
-                <ol class='absolute w-full bg-gray-50 p-5 shadow-lg rounded-b-2xl'>
+                <ol class='absolute w-full bg-gray-50 p-5 shadow-lg rounded-b-2xl z-20'>
                     {links.map((link) => (
                         <li>
                         <NavLink class='left-0 font-medium mt-1 px-2 py-1 flex justify-between p-4 border-b-2 border-gray-300' to={link.to}>
@@ -53,9 +53,8 @@ const NavBar = () => {
 
                     <div>
                         <button
-                            onClick={() => setShowDropDown(!showDropDown)}
                             type='button'
-                            class='inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+                            class='inline-flex md:hidden items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
                             aria-controls='navbar-sticky'
                             aria-expanded='false'
                         >
