@@ -8,6 +8,8 @@ import ContactUsPage from "./Pages/ContactUsPage";
 import React from "react";
 import Footer from "./Components/Footer";
 import AboutUsPage from "./Pages/AboutUsPage";
+import ProductDetailPage from "./Pages/ProductDetailPage";
+import GetCallPage from "./Pages/GetCallPage";
 
 function App() {
     return (
@@ -31,9 +33,16 @@ function App() {
             <Route path="/product">
               <ProductPage/>
             </Route>
+            <Route path="/productdetail">
+              <ProductDetailPage/>
+            </Route>
+            <Route path="/getcall">
+              <GetCallPage/>
+            </Route>
             <Route path="*">
               <Error404Page/>
             </Route>
+            
           </Switch>
         </div>
         <Footer/>
