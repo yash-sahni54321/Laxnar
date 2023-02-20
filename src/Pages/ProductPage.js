@@ -1,5 +1,6 @@
 import PageIntroHeader from "../Components/PageIntroHeader";
 import { GoTriangleDown } from 'react-icons/go';
+import ProductCard from "../Components/ProductCard";
 
 
 const Products = [
@@ -18,7 +19,7 @@ const Products = [
     { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube-mrl.png' },
     { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube-slim-mrl.png' },
     { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/13.png' },
-    
+
 ];
 
 const sideMenuOptions = [
@@ -31,6 +32,9 @@ const sideMenuOptions = [
 ];
 
 const Productpage = () => {
+
+
+
     return (
         <>
             <PageIntroHeader PageName={"Products"} />
@@ -44,7 +48,7 @@ const Productpage = () => {
                                     {options.option}
                                 </div>
                                 <div className="w-1/4 flex justify-center items-end">
-                                    <GoTriangleDown/>
+                                    <GoTriangleDown />
                                 </div>
                             </div>
                         ))}
@@ -53,18 +57,7 @@ const Productpage = () => {
 
                 <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white p-10">
                     {Products.map((product) => (
-                        <div className="flex flex-col justify-center items-center  p-5 border hover:drop-shadow-xl bg-white">
-                            <div className="items-center h-3/4 flex justify-center">
-                                <img className="h-3/4" src={product.productImg} alt="Product Image"></img>
-                            </div>
-
-                            <div className="px-3 py-3 font-bold flex justify-center items-center text-gray-400">
-                                {product.ProductName}
-                            </div>
-                            <div className="px-3 py-3 w-28 font-bold flex justify-center items-center text-sm bg-orange-600 hover:bg-orange-700 text-white hover:cursor-pointer">
-                                BUY NOW
-                            </div>
-                        </div>
+                        <ProductCard currentProduct={product} />
                     ))}
                 </div>
             </div>
