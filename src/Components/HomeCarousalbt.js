@@ -1,5 +1,4 @@
-import React, { useState, useRef } from "react";
-import HomeCard from "./HomeCards";
+import React, {  useRef } from "react";
 
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 export const HomeCarousalbt = () => {
@@ -34,13 +33,13 @@ export const HomeCarousalbt = () => {
 
     const scrollLeft = () => {
         if (myRef.current != null) {
-            myRef.current.scrollLeft -= 800;
+            myRef.current.scrollLeft -= 200;
         }
         // document.getElementById("content").scrollLeft -= 800;
     };
     const scrollRight = () => {
         if (myRef.current != null) {
-            myRef.current.scrollLeft += 800;
+            myRef.current.scrollLeft += 200;
         }
         // document.getElementById("content").scrollLeft += 800;
     };
@@ -64,7 +63,7 @@ export const HomeCarousalbt = () => {
                 <div>
                     <div className='flex-row inline-flex'>
                         {HomeCImages.map((CardData) => (
-                            <div className='card  bg-white w-[400px] h-[400px] m-2 rounded-lg shadow-lg shadow-blue-200' key={CardData.id}>
+                            <div className='card hover:relative bottom-4 bg-white w-[400px] h-[400px] m-2 rounded-lg shadow-lg shadow-blue-200' key={CardData.id}>
                                 <div className='top'>
                                     <img className='w-full h-[200px] object-cover  p-2' src={CardData.img} alt='img' />
                                 </div>
