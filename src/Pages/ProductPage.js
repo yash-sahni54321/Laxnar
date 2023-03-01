@@ -1,26 +1,10 @@
 import PageIntroHeader from "../Components/PageIntroHeader";
 import { GoTriangleDown } from 'react-icons/go';
 import ProductCard from "../Components/ProductCard";
-
-
-const Products = [
-    { id: '1', ProductName: "ARCODE", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube.png' },
-    { id: '1', ProductName: "ARL 500", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcode-4b14a.png' },
-    { id: '1', ProductName: "ARL 700", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube-mrl.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube-slim-mrl.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/13.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcode-4b14a.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube-mrl.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube-slim-mrl.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/13.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcode-4b14a.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube-mrl.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/arcube-slim-mrl.png' },
-    { id: '1', ProductName: "ARCUBE MRL", productImg: 'https://arkel.b-cdn.net/UserFiles/Product/13.png' },
-
-];
+import { useEffect, useState } from "react";
+import {
+    Link,
+  } from "react-router-dom";
 
 const sideMenuOptions = [
     { option: 'ARCUBE' },
@@ -32,8 +16,19 @@ const sideMenuOptions = [
 ];
 
 const Productpage = () => {
+    const [products, setProducts] = useState([]);
 
+    const fetchProducts =  () =>{
+      fetch("http://localhost:3000/Products",  {
+            method : 'GET'
+        })  .then(response => response.json())
+            .then(result => setProducts(result))
+            .catch(error => console.log('error', error));
+    };
 
+    useEffect(()=>{
+        fetchProducts();
+    },[])
 
     return (
         <>
@@ -56,8 +51,10 @@ const Productpage = () => {
                 </div>
 
                 <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white p-10">
-                    {Products.map((product) => (
-                        <ProductCard currentProduct={product} />
+                    {products.map((product) => (
+                        <Link key={product.id} to={`/productdetail/${product.id}`}>
+                        <ProductCard product={product} />
+                        </Link>
                     ))}
                 </div>
             </div>
