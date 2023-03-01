@@ -33,7 +33,7 @@ function App() {
             <Route path="/product">
               <ProductPage/>
             </Route>
-            <Route path="/productdetail">
+            <Route path="/productdetail/:id">
               <ProductDetailPage/>
             </Route>
             <Route path="/getcall">

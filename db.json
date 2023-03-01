@@ -1,0 +1,79 @@
+{
+    "Products": [
+        {
+            "id": "1",
+            "ProductName": "ARCODE",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcube.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARL 500",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcode-4b14a.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARL 700",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcube-mrl.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcube-slim-mrl.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/13.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcube.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcode-4b14a.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcube-mrl.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcube-slim-mrl.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/13.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcube.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcode-4b14a.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcube-mrl.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/arcube-slim-mrl.png"
+        },
+        {
+            "id": "1",
+            "ProductName": "ARCUBE MRL",
+            "productImg": "https://arkel.b-cdn.net/UserFiles/Product/13.png"
+        }
+    ]
+}

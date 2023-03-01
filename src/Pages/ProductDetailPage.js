@@ -1,14 +1,46 @@
-import React, { useState } from 'react'
-import { useHistory, useLocation } from 'react-router'
+import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router'
+
+import {
+  useParams,
+} from "react-router-dom";
 
 const ProductDetailPage = () => {
 
-  const location = useLocation();
+  const  {id}  = useParams();
   const history = useHistory();
+
+  const [product, setProduct] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+    const fetchProducts =  () =>{
+      setIsLoading(false);
+      fetch(`http://localhost:3000/Products/${id}`,  {
+            method : 'GET'
+        })  .then(response => response.json())
+            .then(result => {
+              setProduct(result);
+              setIsLoading(true);
+            })
+            .catch(error => console.log('error', error));
+    };
+
+    useEffect(()=>{
+        fetchProducts();
+    },[])
+  console.log(id)
 
   const openGetCallPage = () =>{
     history.push('/getcall');
   }
+
+  console.log(product)
+
+  if(!isLoading) return (
+    <div>
+      loading
+    </div>
+  )
 
   return (
     <div>
@@ -23,9 +55,9 @@ const ProductDetailPage = () => {
           <img className='h-full hidden md:block' src='https://arkel.b-cdn.net/Content/Images/bg-02.png' alt=''></img>
         </div>
         <div className='flex max-sm:flex-col-reverse max-sm:w-1/2 justify-around absolute w-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-          <img src={location.state.productImage} alt={location.state.productName}></img>
+          <img src={product.productImg} alt={product.ProductName}></img>
           <div className='flex-col w-1/3 max-sm:w-full max-sm:justify-center'>
-            <div className='text-sky-600 font-bold text-5xl max-sm:w-full max-sm:text-center'>{location.state.productName}</div>
+            <div className='text-sky-600 font-bold text-5xl max-sm:w-full max-sm:text-center'>{product.ProductName}</div>
             <div className='font-semibold text-xl mt-4 mb-8 text-gray-700 max-sm:w-full max-sm:text-center'>Monoblock Lift Control Unit</div>
             <div className='mb-6 max-sm:w-full max-sm:text-center'>New Era in Lift Control</div>
             <div className='max-sm:flex max-sm:justify-center max-sm:mb-8'>
