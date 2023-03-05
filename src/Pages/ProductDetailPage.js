@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
-
+import glowImage from "../Images/glow.png";
+import skyBlueBlur from "../Images/skyBlueBlur.png";
 import { useParams } from "react-router-dom";
 import TabView from "../Components/ProductsDetailTab/TabView";
 
@@ -103,8 +104,16 @@ const ProductDetailPage = () => {
             alt=""
           ></img>
         </div>
-        <div className="flex max-sm:flex-col-reverse max-sm:w-1/2 justify-around absolute w-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <img src={product.productImg} alt={product.ProductName}></img>
+        <div className="flex max-sm:flex-col-reverse max-sm:w-1/2 justify-around absolute w-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+          <div className="relative max-sm:w-full h-full w-1/2 ">
+            <img
+              className="-z-10 w-full max-lg:hidden animate-pulse-slow block absolute max-sm:top-0 -top-1/2 left-1/3 max-sm:left-1/2 -translate-x-1/2 object-cover"
+              src={skyBlueBlur}
+              alt=""
+            ></img>
+            <img src={product.productImg} alt={product.ProductName}></img>
+          </div>
+
           <div className="flex-col w-1/3 max-sm:w-full max-sm:justify-center">
             <div className="text-sky-600 font-bold text-5xl max-sm:w-full max-sm:text-center">
               {product.ProductName}
