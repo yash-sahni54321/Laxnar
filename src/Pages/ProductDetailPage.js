@@ -4,6 +4,7 @@ import glowImage from "../Images/glow.png";
 import skyBlueBlur from "../Images/skyBlueBlur.png";
 import { useParams } from "react-router-dom";
 import TabView from "../Components/ProductsDetailTab/TabView";
+import ParticlesComponent from "../Components/Particles";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -57,19 +58,37 @@ const ProductDetailPage = () => {
       },
 
       {
-        name: "Technical Features",
-        ProductDetails: [
+        name: "Applications",
+        ProductApplications: [
           {
-            deail1: "Detail2",
+            "apllication 1":
+              "	Single Board Card with Micro Controller with 40 ",
+            "apllication 2":
+              "	Nos. Discrete Inputs And 40 Nos. Discrete Outputs",
+            "apllication 3":
+              "	No. of Stops: Up To 7 Stops (G+7 Single Collective with ARD Logic) Selection by Jumper.",
+            "apllication 4": "	No of Stops: Up To 15 Stops by Expansion Module",
+            "apllication 5":
+              "	DOOR OPERATION: Manual or Auto Door Selection by Jumper.",
+            "apllication 6":
+              "	AUTO-DOOR TIMER: 5,10,15, Seconds Selection by Jumpers.",
+            "apllication 7":
+              "	DISPLAY OUTPUT: G+7, B+G+6, P+7, P+G+6 Selection by Jumpers.",
+            "apllication 7":
+              "	POWER SUPPLY: 24.8V DC & 5.8V DC With Reverse Bias Protection",
           },
         ],
       },
 
       {
-        name: "Functions",
-        ProductDetails: [
+        name: "Technical Support",
+        TechnicalSupport: [
           {
-            deail1: "Detail3",
+            "support 1":
+              "Suitable To VFD For Gear or Gearless Machin & Hydraulic Machine.",
+            "support 2": "ARD System Logic for 1-Phase / 2-Phase ARD Backup.",
+            "support 3": "3-REED Operation for Floor Management",
+            "support 4": "NC Type Interlocks, Safety Limits Inputs.",
           },
         ],
       },
@@ -91,27 +110,32 @@ const ProductDetailPage = () => {
         {location.pathname}
       </div> */}
 
-      <div className="h-screen relative w-full bg-sky-50">
+      <div className="h-screen relative w-full">
         <div className="flex justify-between h-screen w-full absolute">
+          <ParticlesComponent className="" />
           <img
-            className="h-full hidden md:block"
+            className="h-full hidden md:block "
             src="https://arkel.b-cdn.net/Content/Images/bg-03.png"
             alt=""
           ></img>
           <img
-            className="h-full hidden md:block"
+            className="h-full hidden md:block max-lg:hidden"
             src="https://arkel.b-cdn.net/Content/Images/bg-02.png"
             alt=""
           ></img>
         </div>
         <div className="flex max-sm:flex-col-reverse max-sm:w-1/2 justify-around absolute w-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-          <div className="relative max-sm:w-full h-full w-1/2 ">
+          <div className="relative max-sm:w-full w-1/2 ">
             <img
-              className="-z-10 w-full max-lg:hidden animate-pulse-slow block absolute max-sm:top-0 -top-1/2 left-1/3 max-sm:left-1/2 -translate-x-1/2 object-cover"
+              className="-z-10 w-full max-lg:hidden animate-pulse-slow block absolute max-sm:top-0 -top-32 left-1/3 max-sm:left-1/2 -translate-x-1/2 object-cover"
               src={skyBlueBlur}
               alt=""
             ></img>
-            <img src={product.productImg} alt={product.ProductName}></img>
+            <img
+              className="h-80 absolute top-0 left-1/3 max-sm:left-1/2 -translate-x-1/2 object-cover"
+              src={product.productImg}
+              alt={product.ProductName}
+            ></img>
           </div>
 
           <div className="flex-col w-1/3 max-sm:w-full max-sm:justify-center">
@@ -135,8 +159,8 @@ const ProductDetailPage = () => {
           </div>
         </div>
       </div>
-
-      <div className=" h-40 bg-gradient-to-r from-cyan-700 to-violet-400"></div>
+      <div className="h-52 sm:hidden bg-sky-50"></div>
+      <div className="h-40 bg-gradient-to-r from-cyan-700 to-violet-400"></div>
       <TabView title="title1" tabs={productTabs.tabs_} />
     </div>
   );

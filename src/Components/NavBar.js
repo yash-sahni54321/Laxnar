@@ -35,7 +35,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav class="px-2 py-2.5 relative  shadow w-full top-0 left-0 border-b z-20">
+      <nav class="px-2 py-2.5 relative  shadow w-full top-0 left-0 border-b z-20 bg-white">
         <div class="flex container justify-between">
           <div class="flex md:order-2">
             <button

@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import TabApplicationBody from "./TabApplicationBody";
 import TabBody from "./TabBody";
+import TechnicalSupportTabBody from "./TechnicalSupportTabBody";
 
 const TabView = ({ title, tabs = {} }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -32,10 +34,25 @@ const TabView = ({ title, tabs = {} }) => {
                 </div>
               ))}
             </div>
-
-            <div className="content">
-              <TabBody ProductDetails={tabs[activeTabIndex].ProductDetails} />
-            </div>
+            {activeTabIndex == 0 && (
+              <div className="content">
+                <TabBody ProductDetails={tabs[activeTabIndex].ProductDetails} />
+              </div>
+            )}
+            {activeTabIndex == 1 && (
+              <div className="content">
+                <TabApplicationBody
+                  Applications={tabs[activeTabIndex].ProductApplications}
+                />
+              </div>
+            )}
+            {activeTabIndex == 2 && (
+              <div className="content">
+                <TechnicalSupportTabBody
+                  TechnicalSupports={tabs[activeTabIndex].TechnicalSupport}
+                />
+              </div>
+            )}
           </div>
         )}
       </div>
