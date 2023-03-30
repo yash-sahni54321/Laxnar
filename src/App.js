@@ -22,8 +22,6 @@ function App() {
         <div className="App">
           <NavBar />
           <div className="content">
-
-
             <div>
               <Route exact path="/">
                 <HomePage />
@@ -46,12 +44,7 @@ function App() {
               <Route path="/getcall">
                 <GetCallPage />
               </Route>
-
-
             </div>
-
-
-
           </div>
           <Footer />
         </div>
