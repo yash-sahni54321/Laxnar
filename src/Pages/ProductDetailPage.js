@@ -111,8 +111,8 @@ const ProductDetailPage = () => {
       </div> */}
 
       <div className="h-screen relative w-full">
-        <div className="flex justify-between h-screen w-full absolute">
-          <ParticlesComponent className="" />
+        <div className="flex justify-between h-screen w-full absolute bg-sky-50">
+          {/* <ParticlesComponent className="" /> */}
           <img
             className="h-full hidden md:block "
             src="https://arkel.b-cdn.net/Content/Images/bg-03.png"
