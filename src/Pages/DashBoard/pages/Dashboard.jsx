@@ -7,6 +7,7 @@ import FilterButton from '../partials/actions/FilterButton';
 import Datepicker from '../partials/actions/Datepicker';
 import DashboardCard01 from '../partials/dashboard/DashboardCard01';
 import DashboardCard10 from '../partials/dashboard/DashboardCard10';
+import CreateProductCard from '../partials/dashboard/CreateProductCard';
 
 
 
@@ -56,10 +57,11 @@ function Dashboard() {
             </div>
 
             {/* Cards */}
-            <div className="grid grid-cols-12 gap-6">
+            <div className="grid grid-cols-2 gap-6">
 
               <DashboardCard01 />
               <DashboardCard10 />
+              <CreateProductCard/>
               
             </div>
 
