@@ -5,6 +5,7 @@ import skyBlueBlur from "../Images/skyBlueBlur.png";
 import { useParams } from "react-router-dom";
 import TabView from "../Components/ProductsDetailTab/TabView";
 import ParticlesComponent from "../Components/Particles";
+import axios from "axios";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -13,23 +14,47 @@ const ProductDetailPage = () => {
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchProducts = () => {
-    setIsLoading(false);
-    fetch(`http://localhost:3000/Products/${id}`, {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        setProduct(result);
-        setIsLoading(true);
-      })
-      .catch((error) => console.log("error", error));
-  };
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-  console.log(id);
+
+    const fetchProducts = () => {
+      setIsLoading(false);
+
+
+
+
+        fetch("https://laxnar-lko.onrender.com/api/product/get-product/"+ id.toString(), {
+          // mode: 'no-cors',
+          method: "GET",
+          
+        })
+      .then((response) => response.json())
+      .then((result) => {setProduct(result.data); console.log(result.data)})
+      .catch((error) => console.log("error", error));
+
+      axios({
+
+        url: `https://laxnar-lko.onrender.com/api/product/get-product/${id}`,
+        method: "GET",
+ 
+      })
+   
+        // Handle the response from backend here
+        .then((res) => { console.log(res.data) })
+   
+        // Catch errors if any
+        .catch((err) => {console.log(err) });
+    };
+
+    
+  
+    useEffect(() => {
+      fetchProducts();
+    }, []);
+    console.log(id);
+  
+    
+
+
 
   const openGetCallPage = () => {
     history.push("/getcall");
@@ -37,7 +62,7 @@ const ProductDetailPage = () => {
 
   console.log(product);
 
-  if (!isLoading) return <div>loading</div>;
+
 
   const productTabs = {
     tabs_: [
@@ -104,13 +129,14 @@ const ProductDetailPage = () => {
     ],
   };
 
+  // if(isLoading)  return <div>Loading</div>;
   return (
     <div>
       {/* <div>
         {location.pathname}
       </div> */}
-
-      <div className="h-screen relative w-full">
+      
+      < div className="h-screen relative w-full">
         <div className="flex justify-between h-screen w-full absolute bg-sky-50">
           {/* <ParticlesComponent className="" /> */}
           <img
@@ -133,20 +159,20 @@ const ProductDetailPage = () => {
             ></img>
             <img
               className="h-80 absolute top-0 left-1/3 max-sm:left-1/2 -translate-x-1/2 object-cover"
-              src={product.productImg}
-              alt={product.ProductName}
+              src={product[0].image[0]}
+              alt={product[0].name}
             ></img>
           </div>
 
           <div className="flex-col w-1/3 max-sm:w-full max-sm:justify-center">
             <div className="text-sky-600 font-bold text-5xl max-sm:w-full max-sm:text-center">
-              {product.ProductName}
+              {product[0].name}
             </div>
             <div className="font-semibold text-xl mt-4 mb-8 text-gray-700 max-sm:w-full max-sm:text-center">
-              Monoblock Lift Control Unit
+              {product[0].category}
             </div>
             <div className="mb-6 max-sm:w-full max-sm:text-center">
-              New Era in Lift Control
+              {product[0].description}
             </div>
             <div className="max-sm:flex max-sm:justify-center max-sm:mb-8">
               <span
