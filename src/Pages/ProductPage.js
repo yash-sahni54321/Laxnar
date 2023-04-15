@@ -3,6 +3,7 @@ import { GoTriangleDown } from "react-icons/go";
 import ProductCard from "../Components/ProductCard";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const sideMenuOptions = [
   { option: "ARCUBE" },
@@ -17,12 +18,27 @@ const Productpage = () => {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = () => {
-    fetch("http://localhost:3000/Products", {
+    fetch("https://laxnar-lko.onrender.com/api/product/get-products", {
+      // mode: 'no-cors',
       method: "GET",
+      
     })
       .then((response) => response.json())
-      .then((result) => setProducts(result))
+      .then((result) => {setProducts(result.data); console.log(result.data)})
       .catch((error) => console.log("error", error));
+
+     axios({
+
+       url: "http://localhost:4000/api/product/get-products",
+       method: "GET",
+
+     })
+  
+       // Handle the response from backend here
+       .then((res) => { console.log(res) })
+  
+       // Catch errors if any
+       .catch((err) => {console.log(err) });
   };
 
   useEffect(() => {
@@ -51,7 +67,7 @@ const Productpage = () => {
 
         <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white p-10">
           {products.map((product) => (
-            <Link key={product.id} to={`/productdetail/${product.id}`}>
+            <Link key={product._id} to={`/productdetail/${product._id}`}>
               <ProductCard product={product} />
             </Link>
           ))}

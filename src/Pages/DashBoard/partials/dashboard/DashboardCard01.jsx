@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import LineChart from '../../charts/LineChart01';
 import Icon from '../../images/icon-01.svg';
 import EditMenu from '../EditMenu';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 // Import utilities
 import { tailwindConfig, hexToRGB } from '../../utils/Utils';
@@ -59,6 +61,24 @@ function DashboardCard01() {
     ],
   };
 
+  const [products, setProducts] = useState([]);
+  const fetchProducts = () => {
+    fetch("https://laxnar-lko.onrender.com/api/product/get-products", {
+      // mode: 'no-cors',
+      method: "GET",
+      
+    })
+      .then((response) => response.json())
+      .then((result) => {setProducts(result.data); console.log(result.data)})
+      .catch((error) => console.log("error", error));
+
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+
   return (
     <div className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg rounded-sm border border-slate-200">
       <div className="px-5 pt-5">
@@ -81,7 +101,7 @@ function DashboardCard01() {
         <h2 className="text-lg font-semibold text-slate-800 mb-2">Total Products</h2>
         <div className="text-xs font-semibold text-slate-400 uppercase mb-1">Added</div>
         <div className="flex items-start">
-          <div className="text-3xl font-bold text-slate-800 mr-2">24</div>
+          <div className="text-3xl font-bold text-slate-800 mr-2">{products.length}</div>
           <div className="text-sm font-semibold text-white px-1.5 bg-green-500 rounded-full">+100%</div>
         </div>
       </div>
