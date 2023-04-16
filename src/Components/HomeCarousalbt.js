@@ -45,7 +45,7 @@ export const HomeCarousalbt = () => {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative bg-gray-700">
       {/* <div className="text-center py-5 text-gray-500 text-5xl">Products</div> */}
       <div className="flex justify-center top-5 ">
         <button onClick={scrollLeft} className="p-2 m-2 rounded-full bg-white">
@@ -58,13 +58,13 @@ export const HomeCarousalbt = () => {
       <div
         id="content"
         ref={myRef}
-        className=" bg-gray-50 carousel p-4 flex items-center justify-start overflow-x-auto scroll-smooth  scrollbar-hide custom-scrollbar"
+        className=" bg-gray-700 carousel p-4 flex items-center justify-start overflow-x-auto scroll-smooth  scrollbar-hide custom-scrollbar"
       >
-        <div>
-          <div className="flex-row inline-flex">
+        <div className="bg-gray-700">
+          <div className="flex-row inline-flex bg-gray-700">
             {HomeCImages.map((CardData) => (
               <div
-                className="card hover:relative bottom-4 bg-white w-[400px] h-[400px] m-2 rounded-lg shadow-lg shadow-gray-200"
+                className="bg-gray-900 card hover:relative bottom-4 w-[400px] h-[400px] m-2 rounded-lg shadow-lg shadow-gray-700"
                 key={CardData.id}
               >
                 <div className="top">
@@ -74,12 +74,12 @@ export const HomeCarousalbt = () => {
                     alt="img"
                   />
                 </div>
-                <div className="bottom flex flex-col justify-center items-start p-3 bg-">
-                  <div className="title font-semibold text-xl my-1">
+                <div className="px-7 bottom flex flex-col justify-center items-start p-3">
+                  <div className="title font-semibold text-gray-300 text-lg my-1">
                     {CardData.title}
                   </div>
                   <div className="my-2">
-                    <button className="border px-3 py-1 text-sm text-white bg-gray-500 rounded-lg mr-1 ">
+                    <button className="px-3 py-1 text-sm text-white bg-red-600 hover:bg-red-800 rounded-lg mr-1 ">
                       View
                     </button>
                   </div>
