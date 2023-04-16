@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import CardImage from "../Images/home-image-01.png";
+import ScrollDown from "./scrollDown/ScrollDown";
 
 function HomeCarousal() {
   const slides = [
@@ -36,7 +37,7 @@ function HomeCarousal() {
   };
 
   return (
-    <div className="max-w-[1400px] h-screen w-full m-auto mb-5 relative group">
+    <div className="mt-14 max-w-[1400px] h-screen w-full m-auto relative group">
       {/* <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className='w-full h-full  bg-center bg-cover duration-500' 
@@ -47,7 +48,7 @@ function HomeCarousal() {
 
       {/* {currentIndex ===0} */}
 
-      <div className="w-full h-full bg-center bg-blue-700 flex">
+      <div className="w-full h-full bg-center bg-gray-800 flex">
         <div className="w-2/5 h-full relative justify-center items-center">
           <div className="absolute text-white text-opacity-10 -z-1 font-bold text-8xl top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-3/4">
             {slides[currentIndex].title}
@@ -61,7 +62,7 @@ function HomeCarousal() {
             </div>
 
             {/* Button of carousel */}
-            <div className="max-sm:flex w-max max-sm:justify-center px-3 py-3 font-bold flex justify-center items-center text-sm bg-orange-600 hover:bg-orange-700 text-white hover:cursor-pointer">
+            <div className="bg-red-600 hover:bg-red-800 rounded-lg max-sm:flex w-max max-sm:justify-center px-3 py-3 font-bold flex justify-center items-center text-sm  text-white hover:cursor-pointer">
               Place Order Call
             </div>
           </div>
@@ -95,7 +96,9 @@ function HomeCarousal() {
       <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
+      <ScrollDown/>
     </div>
+    
   );
 }
 

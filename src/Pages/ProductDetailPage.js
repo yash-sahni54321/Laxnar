@@ -12,45 +12,36 @@ const ProductDetailPage = () => {
   const history = useHistory();
 
   const [product, setProduct] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-
-
-    const fetchProducts = () => {
-      setIsLoading(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
 
 
 
-        fetch("https://laxnar-lko.onrender.com/api/product/get-product/"+ id.toString(), {
+      // setIsLoading(false);
+
+
+      console.log("iiiiii")
+
+        fetch("http://localhost:4000/api/product/get-product/643a350a6129b3c72d334a2d", {
           // mode: 'no-cors',
           method: "GET",
           
         })
-      .then((response) => response.json())
-      .then((result) => {setProduct(result.data); console.log(result.data)})
-      .catch((error) => console.log("error", error));
 
-      axios({
-
-        url: `https://laxnar-lko.onrender.com/api/product/get-product/${id}`,
-        method: "GET",
- 
+        fetch("http://localhost:4000/api/product/get-product/643a350a6129b3c72d334a2d")
+      .then(response => {
+        return response.json()
       })
-   
-        // Handle the response from backend here
-        .then((res) => { console.log(res.data) })
-   
-        // Catch errors if any
-        .catch((err) => {console.log(err) });
-    };
+      .then(data => {
+        setProduct(data.data[0]);
+        console.log(product)
+      }).catch((err)=> console.log(err))
 
     
   
-    useEffect(() => {
-      fetchProducts();
-    }, []);
+
     console.log(id);
+
   
     
 
@@ -60,7 +51,6 @@ const ProductDetailPage = () => {
     history.push("/getcall");
   };
 
-  console.log(product);
 
 
 

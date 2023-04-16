@@ -3,8 +3,8 @@ const Footer = () => {
 
   return (
     <>
-      <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
-        <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
+      <footer class=" border-t dark:bg-gray-900 dark:border-gray-600 text-center lg:text-left text-gray-500 ">
+        <div class=" flex justify-center items-center lg:justify-between p-6 border-b dark:border-gray-700">
           <div class="mr-12 hidden lg:block">
             <span>Get connected with us on social networks:</span>
           </div>
@@ -30,7 +30,7 @@ const Footer = () => {
 
           </div>
         </div>
-        <div class="mx-6 py-10 text-center md:text-left">
+        <div class="mx-6 py-10 text-center md:text-left ">
           <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="">
               <h6 class="
@@ -41,6 +41,7 @@ const Footer = () => {
             items-center
             justify-center
             md:justify-start
+            
           ">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cubes"
                   class="w-4 mr-3" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +127,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div class="text-center p-6 bg-gray-200">
+        <div class="border-t border-gray-200 rtext-center p-6 dark:bg-gray-900 dark:border-gray-700">
           <span>© Copyright</span>
         </div>
       </footer>

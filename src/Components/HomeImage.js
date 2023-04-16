@@ -2,7 +2,7 @@ import React from "react";
 import Homeimage from "../Images/Homeimage.jpg";
 export const HomeImage = () => {
   return (
-    <div className="flex-col sm:flex-row inline-flex justify-around m-10">
+    <div className="border-t border-gray-500 px-12 py-16 font-sans bg-gray-800 flex-col sm:flex-row inline-flex justify-around">
       <div className="w-1/2 ">
         <img src={Homeimage} alt="Image" />
       </div>

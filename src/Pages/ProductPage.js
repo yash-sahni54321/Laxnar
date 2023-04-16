@@ -16,6 +16,9 @@ const sideMenuOptions = [
 
 const Productpage = () => {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [ifCategoryLoading, setIfCategoryLoading] = useState(true);
+  const [category, setCategory] = useState([]);
 
   const fetchProducts = () => {
     fetch("https://laxnar-lko.onrender.com/api/product/get-products", {
@@ -24,21 +27,19 @@ const Productpage = () => {
       
     })
       .then((response) => response.json())
-      .then((result) => {setProducts(result.data); console.log(result.data)})
+      .then((result) => {setProducts(result.data); console.log(result.data); setIsLoading(false)})
       .catch((error) => console.log("error", error));
 
-     axios({
 
-       url: "http://localhost:4000/api/product/get-products",
-       method: "GET",
 
-     })
-  
-       // Handle the response from backend here
-       .then((res) => { console.log(res) })
-  
-       // Catch errors if any
-       .catch((err) => {console.log(err) });
+      fetch("https://laxnar-lko.onrender.com/api/category/get-category", {
+        // mode: 'no-cors',
+        method: "GET",
+        
+      })
+        .then((response) => response.json())
+        .then((result) => {setCategory(result.data); console.log(result.data); setIfCategoryLoading(false)})
+        .catch((error) => console.log("error", error));
   };
 
   useEffect(() => {
@@ -49,28 +50,51 @@ const Productpage = () => {
     <>
       <PageIntroHeader PageName={"Products"} />
 
-      <div className="px-28 flex flex-row bg-green-50">
-        <div className="hidden md:block m-4 drop-shadow-2xl h-fit w-1/4 bg-white">
+      <div className="border-t border-gray-600 px-28 flex flex-row dark:bg-gray-700">
+        <div className= {ifCategoryLoading ? "h-80 hidden md:block m-4 drop-shadow-2xl w-1/4 dark:bg-gray-800 rounded-lg border border-gray-600": "h-fit hidden md:block m-4 drop-shadow-2xl w-1/4 dark:bg-gray-800 rounded-lg border border-gray-600"}>
+
+        { ifCategoryLoading?
+          <div className="mx-auto h-full w-full items-center flex justify-center align-middle ">
+            <svg aria-hidden="true" role="status" class="inline w-6 h-6 mr-3 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+              <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="#FF0000"/>
+            </svg>
+          </div> 
+          :
           <ol className="w-full">
-            {sideMenuOptions.map((options) => (
-              <div className="w-full flex justify-between p-4 border-b border-gray-300">
+            {category.map((c) => (
+
+              <div className="w-full flex justify-between p-4 border-b border-gray-600">
                 <div className="font-semibold text-gray-500">
-                  {options.option}
+                  {c.category_name}
                 </div>
-                <div className="w-1/4 flex justify-center items-end">
-                  <GoTriangleDown />
+                <div className="w-1/4 h-full  flex justify-center align-middle items-end">
+                  <svg class="inline w-4 h-4" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 128 128" viewBox="0 0 128 128" id="filter"><path fill="#808080" d="M126.6,13.6v7.8L77.3,70.7v27.2l-26.5,19.2V70.7L1.4,21.4v-7.8c0-1.5,1.2-2.7,2.7-2.7h119.7
+                  C125.3,10.9,126.6,12.1,126.6,13.6z"></path></svg>
                 </div>
               </div>
             ))}
           </ol>
+        }
+          
         </div>
-
-        <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white p-10">
-          {products.map((product) => (
+        
+        <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white dark:bg-gray-800 p-10 rounded-lg">
+        { isLoading?
+          <div className="mx-auto h-full w-full items-center flex justify-center align-middle ">
+            <svg aria-hidden="true" role="status" class="inline w-8 h-8 mr-3 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+              <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="#FF0000"/>
+            </svg>
+          </div> 
+          :
+          products.map((product) => (
             <Link key={product._id} to={`/productdetail/${product._id}`}>
               <ProductCard product={product} />
             </Link>
-          ))}
+          ))
+        }
+          
         </div>
       </div>
     </>

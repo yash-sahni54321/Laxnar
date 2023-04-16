@@ -187,7 +187,10 @@ const CreateProductCard = () => {
 
                     <br/>
                     <div>
-                        <button onClick={(e)=>setCategoryDropDown(!categoryDropDown)} id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">{dropDownFace} <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                        <button onClick={(e)=>setCategoryDropDown(!categoryDropDown)} id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                            {dropDownFace} 
+                            <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
                         
                         { categoryDropDown &&
                         < div id="dropdown" class=" absolute z-100 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
@@ -195,8 +198,8 @@ const CreateProductCard = () => {
 
                                 {
                                     categoryArray.map((ele)=>(
-                                        <li onClick={(e)=>{setCategory(ele.category_name); setCategoryDropDown(!categoryDropDown)}} >
-                                            <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{ele.category_name}</a>
+                                        <li onClick={(e)=>{setCategory(ele.category_name); setCategoryDropDown(!categoryDropDown); setDropDownFace(ele.category_name)} } class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                            <a >{ele.category_name}</a>
                                         </li>
                                     ))
                                 }
