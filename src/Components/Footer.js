@@ -3,8 +3,8 @@ const Footer = () => {
 
   return (
     <>
-      <footer class=" border-t dark:bg-gray-900 dark:border-gray-600 text-center lg:text-left text-gray-500 ">
-        <div class=" flex justify-center items-center lg:justify-between p-6 border-b dark:border-gray-700">
+      <footer class=" border-t bg-gray-900 border-gray-600 text-center lg:text-left text-gray-500 ">
+        <div class=" flex justify-center items-center lg:justify-between p-6 border-b border-gray-700">
           <div class="mr-12 hidden lg:block">
             <span>Get connected with us on social networks:</span>
           </div>
@@ -127,7 +127,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div class="border-t border-gray-200 rtext-center p-6 dark:bg-gray-900 dark:border-gray-700">
+        <div class="border-t border-gray-200 rtext-center p-6 bg-gray-900 border-gray-700">
           <span>© Copyright</span>
         </div>
       </footer>

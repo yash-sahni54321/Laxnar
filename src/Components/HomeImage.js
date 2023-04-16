@@ -25,7 +25,7 @@ export const HomeImage = () => {
           panels, pre-installed parameters, safety measures, on call service, at
           site service (if required).
         </p>
-        <button className="mb-5 float-right text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+        <button className="mb-5 float-right text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 bg-gray-600 hover:bg-gray-700 focus:ring-gray-800">
           Read More
         </button>
       </div>
