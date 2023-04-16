@@ -50,8 +50,8 @@ const Productpage = () => {
     <>
       <PageIntroHeader PageName={"Products"} />
 
-      <div className="border-t border-gray-600 px-28 flex flex-row dark:bg-gray-700">
-        <div className= {ifCategoryLoading ? "h-80 hidden md:block m-4 drop-shadow-2xl w-1/4 dark:bg-gray-800 rounded-lg border border-gray-600": "h-fit hidden md:block m-4 drop-shadow-2xl w-1/4 dark:bg-gray-800 rounded-lg border border-gray-600"}>
+      <div className="border-t border-gray-600 px-28 flex flex-row bg-gray-700">
+        <div className= {ifCategoryLoading ? "h-80 hidden md:block m-4 drop-shadow-2xl w-1/4 bg-gray-800 rounded-lg border border-gray-600": "h-fit hidden md:block m-4 drop-shadow-2xl w-1/4 bg-gray-800 rounded-lg border border-gray-600"}>
 
         { ifCategoryLoading?
           <div className="mx-auto h-full w-full items-center flex justify-center align-middle ">
@@ -79,7 +79,7 @@ const Productpage = () => {
           
         </div>
         
-        <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white dark:bg-gray-800 p-10 rounded-lg">
+        <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4 flex-1 m-4 drop-shadow-2xl w-1/2 bg-white bg-gray-800 p-10 rounded-lg">
         { isLoading?
           <div className="mx-auto h-full w-full items-center flex justify-center align-middle ">
             <svg aria-hidden="true" role="status" class="inline w-8 h-8 mr-3 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 const ProductCard = ({ product }) => {
 
     return (
-        <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 hover:shadow-lg">
+        <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow bg-gray-900 border-gray-700 hover:shadow-lg">
             {/* <div className="items-center h-3/4 flex justify-center">
                 <img className="object-contain" src={product.productImg} alt="Product Image"></img>
             </div> */}
