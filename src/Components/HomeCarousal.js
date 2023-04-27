@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import CardImage from "../Images/home-image-01.png";
+import CardImage from "../Images/home-image-01.jpg";
 import ScrollDown from "./scrollDown/ScrollDown";
 
 function HomeCarousal() {
@@ -70,13 +70,13 @@ function HomeCarousal() {
 
         <div className="w-3/5 p-30 h-full">
           <div className="p-30 h-full relative">
-            <div className="absolute w-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            {/* <div className="absolute w-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <img
                 className="object-contain"
                 src={CardImage}
                 alt="card decor png image"
               ></img>
-            </div>
+            </div> */}
 
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <img
@@ -96,9 +96,8 @@ function HomeCarousal() {
       <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
-      <ScrollDown/>
+      <ScrollDown />
     </div>
-    
   );
 }
 
