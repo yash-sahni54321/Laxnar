@@ -6,10 +6,10 @@ const HomeResearch = () => {
     <div className="flex-col sm:flex-row items-center inline-flex p-5 my-10">
       <div className="flex-1 mb-5 px-3">
         <div className="mb-5">
-          <h1 className="text-5xl text-gray-400">Research and Development</h1>
+          <h1 className="text-5xl text-white">Research and Development</h1>
         </div>
         <div>
-          <p className="text-justify">
+          <p className="text-justify text-white">
             Laxnar is focused on accomplishing perfect results with its
             expertise and vast technical knowledge. Therefore, all Laxnar
             products are developed by expert Indian engineers and produced in
