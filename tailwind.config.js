@@ -66,6 +66,7 @@ module.exports = {
   ],
 };
 
+
 // animation: {
 //         "pulse-slow": "pulse 2s linear infinite",
 //       },

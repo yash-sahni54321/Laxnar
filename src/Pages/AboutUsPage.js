@@ -7,7 +7,7 @@ const AboutUsPage = () => {
     <>
       <PageIntroHeader PageName={"About"} />
       <AboutTop />
-      <CounterUpPage />
+      <CounterUpPage />;
     </>
   );
 };

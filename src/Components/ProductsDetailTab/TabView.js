@@ -26,7 +26,7 @@ const TabView = ({ title, tabs = {} }) => {
                   className={
                     index === activeTabIndex
                       ? "active-tab py-4 bg-white px-6 h-15 w-4/5 border-t-4 border-orange-600 font-semibold text-sm text-center"
-                      : "tab py-4 px-6 h-15 w-4/5 bg-blue-600 text-white text-sm text-center font-semibold"
+                      : "tab py-4 px-6 h-15 w-4/5 bg-red-600 text-white text-sm text-center font-semibold"
                   }
                   onClick={() => activeTab(index)}
                 >

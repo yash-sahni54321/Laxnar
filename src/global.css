@@ -17,6 +17,10 @@
     cursor: pointer;
 }
 
+body {
+    font-family: "Poppins";
+}
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
     cursor: pointer;
     background-color: #a0aec0;

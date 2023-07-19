@@ -64,12 +64,12 @@ function DashboardCard01() {
   const [products, setProducts] = useState([]);
   const fetchProducts = () => {
     fetch("https://laxnar-lko.onrender.com/api/product/get-products", {
-      // mode: 'no-cors',
+      mode: 'no-cors',
       method: "GET",
-      
+
     })
       .then((response) => response.json())
-      .then((result) => {setProducts(result.data); console.log(result.data)})
+      .then((result) => { setProducts(result.data); console.log(result.data) })
       .catch((error) => console.log("error", error));
 
   };
